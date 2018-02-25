@@ -2,5 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\tests\linked_list_test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\linked_list.hpp" />
+    <ClInclude Include="src\tests\linked_list_test.h" />
   </ItemGroup>
 </Project>
