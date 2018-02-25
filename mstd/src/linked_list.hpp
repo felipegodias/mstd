@@ -39,9 +39,9 @@ namespace mstd
 		{
 		}
 
-		friend void LinkedList<T>::AddFirst(const T data);
-		friend void LinkedList<T>::AddAfter(LinkedListNode<T>* node, const T data);
-		friend void LinkedList<T>::AddBefore(LinkedListNode<T>* node, const T data);
+		friend void LinkedList<T>::AddFirst(const T& data);
+		friend void LinkedList<T>::AddAfter(LinkedListNode<T>* node, const T& data);
+		friend void LinkedList<T>::AddBefore(LinkedListNode<T>* node, const T& data);
 		friend bool LinkedList<T>::Remove(LinkedListNode<T>* node);
 	};
 
@@ -54,9 +54,8 @@ namespace mstd
 		unsigned int m_count;
 
 	public:
-		explicit LinkedList()
+		explicit LinkedList() : m_head(nullptr), m_tail(nullptr), m_count(0)
 		{
-			m_count = 0;
 		}
 
 		~LinkedList()
@@ -85,7 +84,7 @@ namespace mstd
 			return m_count;
 		}
 
-		void AddFirst(const T data)
+		void AddFirst(const T& data)
 		{
 			if (m_head == nullptr)
 			{
@@ -99,7 +98,7 @@ namespace mstd
 			}
 		}
 
-		void AddLast(const T data)
+		void AddLast(const T& data)
 		{
 			if (m_head == nullptr)
 			{
@@ -111,7 +110,7 @@ namespace mstd
 			}
 		}
 
-		void AddAfter(LinkedListNode<T>* node, const T data)
+		void AddAfter(LinkedListNode<T>* node, const T& data)
 		{
 			if (node == nullptr || node->m_list != this)
 			{
@@ -134,7 +133,7 @@ namespace mstd
 			m_count++;
 		}
 
-		void AddBefore(LinkedListNode<T>* node, const T data)
+		void AddBefore(LinkedListNode<T>* node, const T& data)
 		{
 			if (node == nullptr || node->m_list != this)
 			{
@@ -157,7 +156,7 @@ namespace mstd
 			m_count++;
 		}
 
-		void AddAt(const unsigned int index, T data)
+		void AddAt(const unsigned int index, const T& data)
 		{
 			
 			if (m_count == 0 || index == 0)
@@ -185,7 +184,7 @@ namespace mstd
 			}
 		}
 
-		bool Remove(const T data)
+		bool Remove(const T& data)
 		{
 			LinkedListNode<T>* it = m_head;
 			while (it != nullptr)
@@ -272,7 +271,7 @@ namespace mstd
 			return Find(data) != nullptr;
 		}
 
-		LinkedListNode<T>* Find(const T data) const
+		LinkedListNode<T>* Find(const T& data) const
 		{
 			LinkedListNode<T>* it = m_head;
 			while (it != nullptr)
@@ -286,7 +285,7 @@ namespace mstd
 			return nullptr;
 		}
 
-		LinkedListNode<T>* FindLast(const T data) const
+		LinkedListNode<T>* FindLast(const T& data) const
 		{
 			LinkedListNode<T>* it = m_tail;
 			while (it != nullptr)
