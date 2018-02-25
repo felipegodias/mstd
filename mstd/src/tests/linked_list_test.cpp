@@ -10,7 +10,6 @@ LinkedListTest::LinkedListTest(const int lenght) : m_list(new mstd::LinkedList<i
 	}
 }
 
-
 LinkedListTest::~LinkedListTest()
 {
 	delete m_list;

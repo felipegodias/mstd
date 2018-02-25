@@ -3,9 +3,15 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\tests\linked_list_test.cpp" />
+    <ClCompile Include="src\tests\queue_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\linked_list.hpp" />
     <ClInclude Include="src\tests\linked_list_test.h" />
+    <ClInclude Include="src\queue.hpp" />
+    <ClInclude Include="src\tests\queue_test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\exception.h" />
   </ItemGroup>
 </Project>
