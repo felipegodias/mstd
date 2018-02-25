@@ -2,13 +2,18 @@
 #include "../linked_list.hpp"
 #include <stdio.h>
 
-LinkedListTest::LinkedListTest(const int lenght) : m_list(nullptr)
+LinkedListTest::LinkedListTest(const int lenght) : m_list(new mstd::LinkedList<int>())
 {
-	m_list = new mstd::LinkedList<int>();
 	for (int i = 0; i < lenght; i++)
 	{
 		m_list->AddLast(i);
 	}
+}
+
+
+LinkedListTest::~LinkedListTest()
+{
+	delete m_list;
 }
 
 void LinkedListTest::Run()
@@ -17,7 +22,7 @@ void LinkedListTest::Run()
 	m_list->Remove(9);
 	m_list->Remove(1);
 	m_list->Remove(8);
-	
+
 	Print();
 	PrintReverse();
 

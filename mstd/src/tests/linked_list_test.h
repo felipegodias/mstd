@@ -1,6 +1,7 @@
 ﻿#pragma once
 
-namespace mstd {
+namespace mstd
+{
 	template <typename T>
 	class LinkedList;
 }
@@ -11,6 +12,7 @@ private:
 	mstd::LinkedList<int>* m_list;
 public:
 	explicit LinkedListTest(const int lenght = 10);
+	~LinkedListTest();
 	void Run();
 	void Print();
 	void PrintReverse();

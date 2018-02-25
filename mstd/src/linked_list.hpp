@@ -60,13 +60,7 @@ namespace mstd
 
 		~LinkedList()
 		{
-			LinkedListNode<T>* it = m_head;
-			while (it != nullptr)
-			{
-				LinkedListNode<T>* next = it->GetNext();
-				delete it;
-				it = next;
-			}
+			Clear();
 		}
 
 		LinkedListNode<T>* GetFirst() const
@@ -158,12 +152,11 @@ namespace mstd
 
 		void AddAt(const unsigned int index, const T& data)
 		{
-			
 			if (m_count == 0 || index == 0)
 			{
 				this->AddFirst(data);
 			}
-			else if(m_count <= index)
+			else if (m_count <= index)
 			{
 				this->AddLast(data);
 			}
@@ -312,6 +305,5 @@ namespace mstd
 			m_tail = nullptr;
 			m_count = 0;
 		}
-
 	};
 }
