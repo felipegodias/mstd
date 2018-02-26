@@ -2,18 +2,18 @@
 
 namespace mstd
 {
-	template <typename T>
-	class Queue;
+    template <typename T>
+    class Queue;
 }
 
 class QueueTest
 {
 private:
-	mstd::Queue<int>* m_queue;
+    mstd::Queue<int>* m_queue;
 public:
-	explicit QueueTest();
-	~QueueTest();
+    explicit QueueTest();
+    ~QueueTest();
 
-	void Run();
-	void Print();
+    void Run();
+    void Print();
 };

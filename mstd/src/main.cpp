@@ -5,15 +5,15 @@
 
 int main(int argc, char* argv[])
 {
-	{
-		QueueTest queue_test = QueueTest();
-		queue_test.Run();
-	}
-	/*
-	LinkedListTest linked_list_test = LinkedListTest(10);
-	linked_list_test.Run();
-	*/
-	int cin = 0;
-	scanf_s("%d", &cin);
-	return 0;
+    {
+        QueueTest queue_test = QueueTest();
+        queue_test.Run();
+    }
+    /*
+    LinkedListTest linked_list_test = LinkedListTest(10);
+    linked_list_test.Run();
+    */
+    int cin = 0;
+    scanf_s("%d", &cin);
+    return 0;
 }
