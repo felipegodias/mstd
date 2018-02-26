@@ -7,6 +7,8 @@ namespace mstd
     template <typename T>
     struct QueueNode
     {
+        friend class Queue<T>;
+
     private:
         QueueNode<T>* m_next;
         const T m_data;
@@ -19,12 +21,6 @@ namespace mstd
         explicit QueueNode(const T& data) : m_next(nullptr), m_data(data)
         {
         }
-
-        friend void Queue<T>::Enqueue(const T& data);
-        friend T Queue<T>::Dequeue();
-        friend T Queue<T>::Peek() const;
-        friend void Queue<T>::Clear();
-        friend bool Queue<T>::Contains(const T& data) const;
     };
 
     template <typename T>

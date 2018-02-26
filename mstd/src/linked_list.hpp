@@ -8,6 +8,8 @@ namespace mstd
     template <typename T>
     struct LinkedListNode
     {
+        friend class LinkedList<T>;
+
     private:
         const LinkedList<T>* m_list;
         LinkedListNode<T>* m_next;
@@ -38,11 +40,6 @@ namespace mstd
                                                                             m_previous(nullptr), m_data(data)
         {
         }
-
-        friend void LinkedList<T>::AddFirst(const T& data);
-        friend void LinkedList<T>::AddAfter(LinkedListNode<T>* node, const T& data);
-        friend void LinkedList<T>::AddBefore(LinkedListNode<T>* node, const T& data);
-        friend bool LinkedList<T>::Remove(LinkedListNode<T>* node);
     };
 
     template <typename T>
@@ -259,7 +256,7 @@ namespace mstd
             return false;
         }
 
-        bool Contains(const T data) const
+        bool Contains(const T& data) const
         {
             return Find(data) != nullptr;
         }
